@@ -10,10 +10,10 @@ def start(message):
 @bot.message_handler(commands=['request_category'])
 def get_text_choise(message):
        markup = types.InlineKeyboardMarkup(row_width=1)
-       btn1 = types.InlineKeyboardButton('Order status stuck', callback_data='button1')
-       btn2 = types.InlineKeyboardButton('No money returned', callback_data='button2')
-       btn3 = types.InlineKeyboardButton("Late delivery",callback_data='button3')
-       btn4 = types.InlineKeyboardButton("Other",callback_data='button4')
+       btn1 = types.InlineKeyboardButton('Статус заказа завис', callback_data='button1')
+       btn2 = types.InlineKeyboardButton('Деньги не вернулись', callback_data='button2')
+       btn3 = types.InlineKeyboardButton("Задержка доставки",callback_data='button3')
+       btn4 = types.InlineKeyboardButton("Другое",callback_data='button4')
        markup.add(btn1, btn2, btn3, btn4)
        bot.send_message(message.from_user.id, "Выберите категорию запроса (После этого введите команду /text)", reply_markup=markup)
 
